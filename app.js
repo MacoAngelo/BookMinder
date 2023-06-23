@@ -26,6 +26,10 @@ const bodyparser = require('body-parser');
 app.get("/", function(request, response) {
     response.render("login", {nickname: "Adm"});
 });
+
+app.get("/livro", function(request, response) {
+    response.render("livro");
+});
 // =-=-=-=-=-=-=-=-=-=-=-=
 
 // Configurar o Body-Parser
