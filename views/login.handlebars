@@ -1,5 +1,24 @@
-<div>
-    <input type="text">
-    <input type="password" name="" id="">
-    <button>Login</button>
+<div class="justify-content-center container" style="margin-top: 2rem;">
+  <form>
+    <div class="form-group row">
+      <label for="inputUsuario" class="col-sm-2 col-form-label">Usuário</label>
+      <div class="col-sm-12">
+        <input type="text" readonly class="form-control" id="inputUsuario" value="admin">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputSenha" class="col-sm-2 col-form-label">Senha</label>
+      <div class="col-sm-12">
+        <input type="password" class="form-control" id="inputSenha" placeholder="Senha">
+      </div>
+    </div>
+    <form class="was-validated">
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="customControlValidation1">
+        <label class="custom-control-label" for="customControlValidation1">Lembrar-me</label>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary col-sm-12" style="margin-top: 1rem;" >Entrar</button>
+      </div>
+    </form>
 </div>
