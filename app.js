@@ -31,6 +31,10 @@ app.get("/pessoas", function(request, response) {
     response.render("login", {nickname: "Adm"});
 });
 
+app.get("/locacao", function(request, response) {
+    response.render("locacao");
+});
+
 app.get("/livro", function(request, response) {
     response.render("livro");
 });

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,40 +21,31 @@
     </style>
 
 <body>
-       <h1>HTML Label Example</h1>
-     <form action="example.php">
+       <h1>Locação - livros</h1>
 <fieldset>
-          <legend>User Comments</legend>
-          <label for="username">Username:</label><br/>
-          <input type="text" name="username" placeholder="enter username"/><br/><br/>
-          <input type="radio" name="student"/><label>Student
-          <input type="radio" name="professional"/><label>Professinal<br/><br/>
-          <label for="comments">Comments:</label><br/>   
-          <textarea name="comments" rows="5" cols="30">  
-          </textarea><br/><br/>
-     </fieldset>
-  <hr>
-     <fieldset>
-          <legend>User Login</legend>
-          <label>UserID:<br/>
-          <input type="text" name="userid" placeholder=" "/><br/>
-          <label>Password:<br/>
-          <input type="password" name="pwd" placeholder=" "/><br/>
-     </fieldset>
-   </form>
-</body>
-</html>
+          <legend>Digitalize sua preferência</legend>
+          <label for="username">Locatário:</label><br/>
+          <input type="text" name="username"/><br/><br/>
 
-    <div>
-    <input type="data" Data de retirada>
-    <input type="data" Data de devolução>
-    <input type="data" Data de devolução prevista>
+          <label for="data">Data de devolução:</label><br/>
+          <input type="date" name="data"/><br/><br/>
 
+          <label for="data">Data de retirada:</label><br/>
+          <input type="date" name="data"/><br/><br/>
 
+          <label for="number">Valor:</label><br/>
+          <input type="number" name="number"/><br/><br/>
 
-    <input type="password">
-    <!--Executa a locação do livro com o que foi preenchido-->
-    <button>Pronto</button>
+          <label for="number">Valor multa:</label><br/>
+          <input type="number" name="number"/><br/><br/> 
+
+          <label for="number">Valor total:</label><br/>
+          <input type="number" name="number"/><br/><br/>
+
+      
+         
+        <!--Executa a locação do livro com o que foi preenchido-->
+    <button>Solicitar locação</button>
 
 </div>
 
