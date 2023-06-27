@@ -34,6 +34,10 @@ app.get("/pessoas", function(request, response) {
 app.get("/livro", function(request, response) {
     response.render("livro");
 });
+
+app.get("/autor", function(request,response){
+    response.render("autor");
+});
 // =-=-=-=-=-=-=-=-=-=-=-=
 
 // Configurar o Body-Parser
