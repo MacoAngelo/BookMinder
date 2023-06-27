@@ -31,6 +31,10 @@ app.get("/pessoas", function(request, response) {
     response.render("login", {nickname: "Adm"});
 });
 
+app.get("/locacao", function(request, response) {
+    response.render("locacao");
+});
+
 app.get("/livro", function(request, response) {
     response.render("livro");
 });
@@ -51,7 +55,7 @@ app.set('view engine', 'handlebars');
 // =-=-=-=-=-=-=-=-=-=-=-=
 
 // Inicializar o servidor
-app.listen(8088, function () {
+app.listen(8089, function () {
     console.log("Servidor rodando na porta 8088!");
 });
 // =-=-=-=-=-=-=-=-=-=-=-=
