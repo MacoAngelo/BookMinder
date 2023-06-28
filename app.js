@@ -38,6 +38,10 @@ app.get("/locacao", function(request, response) {
 app.get("/livro", function(request, response) {
     response.render("livro");
 });
+
+app.get("/gridLivros", function(request, response) {
+    response.render("gridLivros");
+});
 // =-=-=-=-=-=-=-=-=-=-=-=
 
 // Configurar o Body-Parser
