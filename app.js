@@ -56,6 +56,6 @@ app.set('view engine', 'handlebars');
 
 // Inicializar o servidor
 app.listen(8089, function () {
-    console.log("Servidor rodando na porta 8088!");
+    console.log("Servidor rodando na porta 8089!");
 });
 // =-=-=-=-=-=-=-=-=-=-=-=
