@@ -29,6 +29,7 @@ app.get("/", function(request, response) {
 });
 
 app.get("/usuarios", function(request, response) {
+    // teste
     Usuario.findAll().then(
         function (usuarios) {
             response.render("usuario", { usuarios: usuarios })
