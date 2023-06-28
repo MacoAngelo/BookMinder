@@ -48,6 +48,10 @@ app.get("/locacao", function(request, response) {
 app.get("/livro", function(request, response) {
     response.render("livro");
 });
+
+app.get("/gridLivros", function(request, response) {
+    response.render("gridLivros");
+});
 // =-=-=-=-=-=-=-=-=-=-=-=
 
 // Configurar o Body-Parser
@@ -61,7 +65,7 @@ app.set('view engine', 'handlebars');
 // =-=-=-=-=-=-=-=-=-=-=-=
 
 // Inicializar o servidor
-app.listen(8089, function () {
+app.listen(8088, function () {
     console.log("Servidor rodando na porta 8088!");
 });
 // =-=-=-=-=-=-=-=-=-=-=-=

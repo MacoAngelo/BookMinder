@@ -1,75 +1,77 @@
 <!-- Locações: funcões
--Cadastrar/realizar novas locações de livros GRID modal
+-Cadastrar/realizar novas locações de livros modal
 -Criar uma telinha separada para exibir ao usuário o seu próprio histórico de locações
+-Tabela de armazenamento
     -->
 
-
-
 <br>
-<form class="needs-validation" novalidate>
-  <div class="form-row">
-    <div class="col-md-4 mb-3">
-      <label for="validationTooltip01">Locatário</label>
-      <input type="text" class="form-control" id="validationTooltip01">
-      <div class="valid-tooltip">
-        Preenchido
-      </div>
 
-      <div class="form-row">
-    <div class="col-md-4 mb-3">
-      <label for="data">Data de retirada</label>
-      <input type="date" class="form-control" id="validationTooltip01">
-      <div class="valid-tooltip">
-        Preenchido 
-      </div>
+<form class="needs-validation">
+    <div class="form-row">
+        <div class="col-md-4 mb-3" style="">
+            <label for="validationTooltip01">Locatário</label>
+            <input type="text" class="form-control" id="validationTooltip01">
+            <div class="valid-tooltip">
+                Preenchido
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="data" >Data de retirada</label>
+                    <input type="date" class="form-control" id="validationTooltip01">
+                    <div class="valid-tooltip">
+                        Preenchido
+                    </div>
 
 
+                </div>
+                <div class-data=""="col-md-4 mb-3">
+                    <label for="data">Data de devolução</label>
+                    <input type="date" class="form-control" id="validationTooltip02" placeholder="Last name"
+                        value="Otto" required>
+                    <div class="valid-tooltip">
+                        Preenchido
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationTooltipUsername">Valor multa</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        </div>
+                        <input type="number" class="form-control" id="validationTooltipUsername"
+                            aria-describedby="validationTooltipUsernamePrepend" required>
+                        <div class="invalid-tooltip">
+                        </div>
+                    </div>
+                </div>
+
+            <div class="col-md-4 mb-3" style="float: right;">
+                <label for="validationTooltipUsername">Valor</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                    </div>
+                    <input type="number" class="form-control"  id="validationTooltipUsername">
+                    <div class="invalid-tooltip">
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="validationTooltipUsername">Totalizador</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                </div>
+                <input type="number" class="form-control" id="validationTooltipUsername">
+                <div class="invalid-tooltip">
+                </div>
+            </div>
+        </div>
     </div>
-    <div class-data=""="col-md-4 mb-3">
-      <label for="data">Data de devolução</label>
-      <input type="date" class="form-control" id="validationTooltip02" placeholder="Last name" value="Otto" required>
-      <div class="valid-tooltip">
-      Preenchido
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="validationTooltipUsername">Valor multa</label>
-      <div class="input-group">
-        <div class="input-group-prepend">
-        </div>
-        <input type="text" class="form-control" id="validationTooltipUsername"  aria-describedby="validationTooltipUsernamePrepend" required>
-        <div class="invalid-tooltip">
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-md-4 mb-3">
-      <label for="validationTooltipUsername">Valor</label>
-      <div class="input-group">
-        <div class="input-group-prepend">
-        </div>
-        <input type="text" class="form-control" id="validationTooltipUsername">
-        <div class="invalid-tooltip">
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-md-4 mb-3">
-      <label for="validationTooltipUsername">Totalizador</label>
-      <div class="input-group">
-        <div class="input-group-prepend">
-        </div>
-        <input type="text" class="form-control" id="validationTooltipUsername"  aria-describedby="validationTooltipUsernamePrepend" required>
-        <div class="invalid-tooltip">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  
-  <button class="btn btn-primary" type="submit">Realizar locação</button>
+    <button class="btn btn-primary" type="submit">Realizar locação</button>
 </form>
 
 <!--<!DOCTYPE html>
