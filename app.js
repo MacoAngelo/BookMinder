@@ -20,11 +20,20 @@ const bodyparser = require('body-parser');
 // =-=-=-=-=-=-=-=-=-=-=-=
 
 // Implementar entidades do Sequelize
+const Usuario = require('./models/Usuario')
 // =-=-=-=-=-=-=-=-=-=-=-=
 
 // Implementar rotas do servidor
 app.get("/", function(request, response) {
     response.render("login", {nickname: "Adm"});
+});
+
+app.get("/usuarios", function(request, response) {
+    Usuario.findAll().then(
+        function (usuarios) {
+            response.render("usuario", { usuarios: usuarios })
+        }
+    );
 });
 
 app.get("/pessoas", function(request, response) {
@@ -37,6 +46,10 @@ app.get("/locacao", function(request, response) {
 
 app.get("/livro", function(request, response) {
     response.render("livro");
+});
+
+app.get("/gridLivros", function(request, response) {
+    response.render("gridLivros");
 });
 // =-=-=-=-=-=-=-=-=-=-=-=
 
