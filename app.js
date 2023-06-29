@@ -52,6 +52,10 @@ app.get("/livro", function(request, response) {
 app.get("/gridLivros", function(request, response) {
     response.render("gridLivros");
 });
+
+app.get("/home", function(request, response) {
+    response.render("home");
+});
 // =-=-=-=-=-=-=-=-=-=-=-=
 
 // Configurar o Body-Parser
