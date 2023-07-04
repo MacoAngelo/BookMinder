@@ -6,6 +6,7 @@ const sequelizeConnection = new sequelizeFrame('bookminder', 'root', 'root', {
 });
 
 module.exports = {
+    // teste
     sequelizeFrame: sequelizeFrame,
     sequelizeConnection: sequelizeConnection,
 }
