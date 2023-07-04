@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <h2>Grid de Usuários</h2>
+    {{#each usuarios}}
+    <div class="row" onclick="alert('Abrindo modal do ID ' + {{dataValues.id}})">
+      <div class="col-md-3">
+        <p>Nome: {{dataValues.usuario}}</p>
+      </div>
+      <div class="col-md-3">
+        <p>Ativo: {{dataValues.ativo}}</p>
+      </div>
+      <div class="col-md-3">
+        <p>Bloqueado: {{dataValues.bloqueado}}</p>
+      </div>
+      <div class="col-md-3">
+        <p>Tentativas de Login: {{dataValues.qtdTentativasLogin}}</p>
+      </div>
+    </div>
+    {{/each}}
+  </div>

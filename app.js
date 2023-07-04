@@ -20,11 +20,21 @@ const bodyparser = require('body-parser');
 // =-=-=-=-=-=-=-=-=-=-=-=
 
 // Implementar entidades do Sequelize
+const Usuario = require('./models/Usuario')
 // =-=-=-=-=-=-=-=-=-=-=-=
 
 // Implementar rotas do servidor
 app.get("/", function(request, response) {
     response.render("login", {nickname: "Adm"});
+});
+
+app.get("/usuarios", function(request, response) {
+    // teste
+    Usuario.findAll().then(
+        function (usuarios) {
+            response.render("usuario", { usuarios: usuarios })
+        }
+    );
 });
 
 app.get("/pessoas", function(request, response) {
@@ -41,6 +51,13 @@ app.get("/livro", function(request, response) {
 
 app.get("/autor", function(request,response){
     response.render("autor");
+
+app.get("/gridLivros", function(request, response) {
+    response.render("gridLivros");
+});
+
+app.get("/home", function(request, response) {
+    response.render("home");
 });
 // =-=-=-=-=-=-=-=-=-=-=-=
 
@@ -55,7 +72,7 @@ app.set('view engine', 'handlebars');
 // =-=-=-=-=-=-=-=-=-=-=-=
 
 // Inicializar o servidor
-app.listen(8089, function () {
-    console.log("Servidor rodando na porta 8089!");
+app.listen(8088, function () {
+    console.log("Servidor rodando na porta 8088!");
 });
 // =-=-=-=-=-=-=-=-=-=-=-=
