@@ -49,6 +49,9 @@ app.get("/livro", function(request, response) {
     response.render("livro");
 });
 
+app.get("/autor", function(request,response){
+    response.render("autor");
+
 app.get("/gridLivros", function(request, response) {
     response.render("gridLivros");
 });
