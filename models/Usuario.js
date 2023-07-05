@@ -21,4 +21,4 @@ const Usuario = db.sequelizeConnection.define('usuarios', {
 });
 
 module.exports = Usuario;
-// Usuario.sync({force: true});
+ //Usuario.sync({force: true});

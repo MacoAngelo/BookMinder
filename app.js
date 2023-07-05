@@ -21,6 +21,7 @@ const bodyparser = require('body-parser');
 
 // Implementar entidades do Sequelize
 const Usuario = require('./models/Usuario')
+const Autor = require('./models/autor')
 // =-=-=-=-=-=-=-=-=-=-=-=
 
 // Implementar rotas do servidor
@@ -36,6 +37,16 @@ app.get("/usuarios", function(request, response) {
         }
     );
 });
+
+app.get("/autor", function(request, response) {
+    // teste
+    Autor.findAll().then(
+        function (autores) {
+            response.render("autor", { autores: autores })
+        }
+    );
+});
+
 
 app.get("/pessoas", function(request, response) {
     response.render("login", {nickname: "Adm"});
