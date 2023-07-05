@@ -20,15 +20,16 @@ const bodyparser = require('body-parser');
 // =-=-=-=-=-=-=-=-=-=-=-=
 
 // Implementar entidades do Sequelize
-const Usuario = require('./models/Usuario')
+const Usuario = require('./models/Usuario');
+const Livro = require('./models/Livro');
 // =-=-=-=-=-=-=-=-=-=-=-=
 
 // Implementar rotas do servidor
-app.get("/", function(request, response) {
-    response.render("login", {nickname: "Adm"});
+app.get("/", function (request, response) {
+    response.render("login", { nickname: "Adm" });
 });
 
-app.get("/usuarios", function(request, response) {
+app.get("/usuarios", function (request, response) {
     // teste
     Usuario.findAll().then(
         function (usuarios) {
@@ -37,38 +38,43 @@ app.get("/usuarios", function(request, response) {
     );
 });
 
-app.get("/pessoas", function(request, response) {
-    response.render("login", {nickname: "Adm"});
+app.get("/pessoas", function (request, response) {
+    response.render("login", { nickname: "Adm" });
 });
 
-app.get("/locacao", function(request, response) {
+app.get("/locacao", function (request, response) {
     response.render("locacao");
 });
 
-app.get("/livro", function(request, response) {
+app.get("/livro", function (request, response) {
     response.render("livro");
 });
 
-app.get("/autor", function(request,response){
+app.get("/autor", function (request, response) {
     response.render("autor");
 });
 
-app.get("/gridLivros", function(request, response) {
-    response.render("gridLivros");
+app.get("/gridLivros", function (request, response) {
+
+    Livro.findAll().then(
+        function (livros) {
+            response.render("gridLivros", { livros: livros })
+        }
+        )
 });
 
-app.get("/home", function(request, response) {
+app.get("/home", function (request, response) {
     response.render("home");
 });
 // =-=-=-=-=-=-=-=-=-=-=-=
 
 // Configurar o Body-Parser
-app.use(bodyparser.urlencoded({extended: false}))
+app.use(bodyparser.urlencoded({ extended: false }))
 app.use(bodyparser.json());
 // =-=-=-=-=-=-=-=-=-=-=-=
 
 // Configurar o Handlebars
-app.engine('handlebars', handlebars.engine({defaultLayout: 'main'}));
+app.engine('handlebars', handlebars.engine({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 // =-=-=-=-=-=-=-=-=-=-=-=
 

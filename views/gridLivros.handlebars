@@ -11,54 +11,18 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Título</th>
-                <th scope="col">Descrição</th>
+                <th scope="col">Categoria   </th>
             </tr>
         </thead>
         <tbody>
+                {{#each livros}}
             <tr>
-                <th scope="row">{{dataValues.id}}</th>
+                <td> {{dataValues.id}}</td>
                 <td>{{dataValues.titulo}}</td>
-                <td>
-                    {{dataValues.categoria}}
-                </td>
+                <td>{{dataValues.categoria}}</td>
+                <td><button onclick="" class="btn btn-danger">Excluir</button></td>
             </tr>
-            {{#each livros}}
-            <button onclick="" type="button" class="btn btn-primary" data-toggle="modal"
-                data-target="#exampleModalCenter"></button>
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            ...
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <tr onclick="alert('Modal do ID ' + {{dataValues.id}})">
-                <th scope="row">{{dataValues.id}}</th>
-                <td>{{dataValues.titulo}}</td>
-                <td>
-                    {{dataValues.autor}}
-                    {{dataValues.dataLancamento}}
-                    {{dataValues.paginas}}
-                    {{dataValues.classificacao}}
-                    {{dataValues.categoria}}
-                    {{dataValues.editora}}
-
-                </td>
-            </tr>
-            {{/each}}
+                {{/each}}
         </tbody>
     </table>
     <div class="d-flex justify-content-end">
