@@ -27,4 +27,4 @@ const Livro = db.sequelizeConnection.define('livros', {
 });
 
 module.exports = Livro;
-// Usuario.sync({force: true});
+// Livro.sync({force: true});
