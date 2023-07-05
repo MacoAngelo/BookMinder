@@ -12,6 +12,7 @@ app.use(express.static('public'));
 app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
 app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')));
 app.use('/js', express.static(path.join(__dirname, 'node_modules/jquery/dist')));
+app.use('/js', express.static(path.join(__dirname, './models')));
 // =-=-=-=-=-=-=-=-=-=-=-=
 
 // Configurar o servidor para utilizar HandleBars e o Body-Parser
@@ -43,6 +44,10 @@ app.get("/pessoas", function(request, response) {
 
 app.get("/locacao", function(request, response) {
     response.render("locacao");
+});
+
+app.get("/modalLocacao", function(request, response) {
+    response.render("modalLocacao");
 });
 
 app.get("/livro", function(request, response) {
