@@ -1,12 +1,46 @@
+        
 <!-- Locações: funcões
 -Cadastrar/realizar novas locações de livros modal
--Criar uma telinha separada para exibir ao usuário o seu próprio histórico de locações
+-Criar uma telinha separada para exibir ao usuário o seu próprio histórico de locações grid
 -Tabela de armazenamento
+
+novas coisas para fazer:
+
+1
+-entrar em um consenso para o valor da locação de um livro (10 reais por exemplo), 
+vai funcionar conforme a quantidade de livros. Multiplicar a quantidade que for colocada
+
+2
+-fazer um check list do modal quando for selecionar os livros locados
+
+3 - GERAL DE TUDO QUE AINDA PRECISA SER FEITO 
+
+-colocar os livros por ID (talvez) dentro do formulário do modal (que puxe todos os livros que estão cadastrados)
+-colocar um check-box ao lado de cada um pra selecionar quantos livros serão locados
+-fazer o botão de finalizar enviar as informações para o banco de dados
+-fazer dentro do modal ainda, uma rotina que multiplique em valor a quantidade de livros selecionados (definir um valor ainda para locação-)
+-criar um button ao lado do totalizador que é pra finalizar a locação mesmo
+-criar um texto de apresentação que vai ficar no HOME, falando sobre o projeto
+  
+  GERAL PROJETO
+
+  -criar um css body padrão para todos os arquivos
+  -deixar mais responsivo
+  -
     -->
+<br>
+<div class="container">
+    <div class="row">
+        <div class="">
+            <h4>Locação de livros</h4>
+        </div>
+
+    </div>
+</div>
 
 <br>
 
-<form class="needs-validation">
+<form class="needs-validation" style="align-items: center;">
     <div class="form-row">
         <div class="col-md-4 mb-3" style="">
             <label for="validationTooltip01">Locatário</label>
@@ -17,7 +51,7 @@
 
             <div class="form-row">
                 <div class="col-md-4 mb-3">
-                    <label for="data" >Data de retirada</label>
+                    <label for="data">Data de retirada</label>
                     <input type="date" class="form-control" id="validationTooltip01">
                     <div class="valid-tooltip">
                         Preenchido
@@ -27,43 +61,32 @@
                 </div>
                 <div class-data=""="col-md-4 mb-3">
                     <label for="data">Data de devolução</label>
-                    <input type="date" class="form-control" id="validationTooltip02" placeholder="Last name"
-                        value="Otto" required>
+                    <input type="date" class="form-control" id="validationTooltip02">
                     <div class="valid-tooltip">
                         Preenchido
                     </div>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <label for="validationTooltipUsername">Valor multa</label>
+                
+
+                <div class="col-md-4 mb-3" style="float: right;">
+                    <label for="validationTooltipUsername">Totalizador</label>
                     <div class="input-group">
                         <div class="input-group-prepend">
                         </div>
-                        <input type="number" class="form-control" id="validationTooltipUsername"
-                            aria-describedby="validationTooltipUsernamePrepend" required>
+                        <input type="number" class="form-control" id="validationTooltipUsername">
                         <div class="invalid-tooltip">
                         </div>
                     </div>
                 </div>
-
-            <div class="col-md-4 mb-3" style="float: right;">
-                <label for="validationTooltipUsername">Valor</label>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                    </div>
-                    <input type="number" class="form-control"  id="validationTooltipUsername">
-                    <div class="invalid-tooltip">
-                    </div>
-                </div>
-            </div>
             </div>
         </div>
 
         <div class="col-md-4 mb-3">
-            <label for="validationTooltipUsername">Totalizador</label>
+            <label for="validationTooltipUsername">Data de devolução prevista</label>
             <div class="input-group">
                 <div class="input-group-prepend">
                 </div>
-                <input type="number" class="form-control" id="validationTooltipUsername">
+                <input type="date" class="form-control" id="validationTooltipUsername">
                 <div class="invalid-tooltip">
                 </div>
             </div>
@@ -71,59 +94,35 @@
     </div>
 
 
-    <button class="btn btn-primary" type="submit">Realizar locação</button>
-</form>
 
-<!--<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <a id="add-use-button" type="button" class="btn btn-success  mr-2">Adicionar livro</a>
+    <button class="btn btn-primary" type="submit" >Ver histórico de locação</button>
 
-    <title>Locação</title>
-</head>
 
- <title>Locação de livros</title>
+  <div id="add-close-modal" class="modal"
+
+ class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Livros disponíveis</h5>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Texto do corpo do modal, é aqui</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary close-button" data-dismiss="modal" >Fechar </button>
+                <button type="button" class="btn btn-primary">Pronto</button>
+            </div>
+        </div>
+    </div>
+</div>
+   
+
     
 
-    <style>
-        body{
-            background-color: blanchedalmond;
-        }
-        
-    </style>
-
-<body>
-       <h1>Locação - livros</h1>
-<fieldset>
-          <legend>Digitalize sua preferência</legend>
-          <label for="username">Locatário:</label><br/>
-          <input type="text" name="username"/><br/><br/>
-
-          <label for="data">Data de devolução:</label><br/>
-          <input type="date" name="data"/><br/><br/>
-
-          <label for="data">Data de retirada:</label><br/>
-          <input type="date" name="data"/><br/><br/>
-
-          <label for="number">Valor:</label><br/>
-          <input type="number" name="number"/><br/><br/>
-
-          <label for="number">Valor multa:</label><br/>
-          <input type="number" name="number"/><br/><br/> 
-
-          <label for="number">Valor total:</label><br/>
-          <input type="number" name="number"/><br/><br/>
-
-      
-         
-        Executa a locação do livro com o que foi preenchido
-    <button>Solicitar locação</button>
-
-</div>
 
 
-</body>
-</html-->
+    <script src="js/modal.js"></script>
+    
