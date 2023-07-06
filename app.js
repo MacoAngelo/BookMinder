@@ -13,6 +13,7 @@ app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist
 app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')));
 app.use('/js', express.static(path.join(__dirname, 'node_modules/jquery/dist')));
 app.use('/js', express.static(path.join(__dirname, './models')));
+app.use('/js', express.static(path.join(__dirname, './js')));
 // =-=-=-=-=-=-=-=-=-=-=-=
 
 // Configurar o servidor para utilizar HandleBars e o Body-Parser
