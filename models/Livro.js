@@ -15,6 +15,9 @@ const Livro = db.sequelizeConnection.define('livros', {
     autor: {
         type: db.sequelizeFrame.STRING,
     },
+    qtdAutores: {
+        type: db.sequelizeFrame.STRING,
+    },
     dataLancamento: {
         type: db.sequelizeFrame.INTEGER,
     },
@@ -27,4 +30,4 @@ const Livro = db.sequelizeConnection.define('livros', {
 });
 
 module.exports = Livro;
-// Livro.sync({force: true});
+Livro.sync({force: true});
