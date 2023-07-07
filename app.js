@@ -13,6 +13,7 @@ app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist
 app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')));
 app.use('/js', express.static(path.join(__dirname, 'node_modules/jquery/dist')));
 app.use('/js', express.static(path.join(__dirname, './models')));
+app.use('/js', express.static(path.join(__dirname, './js')));
 // =-=-=-=-=-=-=-=-=-=-=-=
 
 // Configurar o servidor para utilizar HandleBars e o Body-Parser
@@ -23,6 +24,11 @@ const bodyparser = require('body-parser');
 // Implementar entidades do Sequelize
 const Usuario = require('./models/Usuario');
 const Livro = require('./models/Livro');
+// =-=-=-=-=-=-=-=-=-=-=-=
+
+// Configurar o Body-Parser
+app.use(bodyparser.urlencoded({ extended: false }))
+app.use(bodyparser.json());
 // =-=-=-=-=-=-=-=-=-=-=-=
 
 // Implementar rotas do servidor
@@ -83,6 +89,7 @@ app.get("/gridLivros", function (request, response) {
         ).catch(
              function(erro) {
                 response.send('Falha ao cadastrar novo livro. Erro ' + erro);
+<<<<<<< HEAD
             }
             )
         });
@@ -102,6 +109,22 @@ app.get("/gridLivros", function (request, response) {
         app.set('view engine', 'handlebars');
         // =-=-=-=-=-=-=-=-=-=-=-=
         
+=======
+             }
+        )
+    });
+
+app.get("/home", function (request, response) {
+    response.render("home");
+});
+// =-=-=-=-=-=-=-=-=-=-=-=
+
+// Configurar o Handlebars
+app.engine('handlebars', handlebars.engine({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
+// =-=-=-=-=-=-=-=-=-=-=-=
+
+>>>>>>> 8cefca67c8da38717dec6d39115de91255afa9f3
 // Inicializar o servidor
 app.listen(8088, function () {
     console.log("Servidor rodando na porta 8088!");
