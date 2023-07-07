@@ -26,6 +26,11 @@ const Usuario = require('./models/Usuario');
 const Livro = require('./models/Livro');
 // =-=-=-=-=-=-=-=-=-=-=-=
 
+// Configurar o Body-Parser
+app.use(bodyparser.urlencoded({ extended: false }))
+app.use(bodyparser.json());
+// =-=-=-=-=-=-=-=-=-=-=-=
+
 // Implementar rotas do servidor
 app.get("/", function (request, response) {
     response.render("login", { nickname: "Adm" });
@@ -66,7 +71,6 @@ app.get("/gridLivros", function (request, response) {
 });
 
     app.post('/add', function (request, response) {
-        console.log(request.body)
         Livro.create(
         {
             titulo: request.body.titulo,
@@ -91,11 +95,6 @@ app.get("/gridLivros", function (request, response) {
 app.get("/home", function (request, response) {
     response.render("home");
 });
-// =-=-=-=-=-=-=-=-=-=-=-=
-
-// Configurar o Body-Parser
-app.use(bodyparser.urlencoded({ extended: false }))
-app.use(bodyparser.json());
 // =-=-=-=-=-=-=-=-=-=-=-=
 
 // Configurar o Handlebars
