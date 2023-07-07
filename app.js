@@ -23,6 +23,7 @@ const bodyparser = require('body-parser');
 // Implementar entidades do Sequelize
 const Usuario = require('./models/Usuario');
 const Livro = require('./models/Livro');
+const Autor = require('./models/Autor');
 // =-=-=-=-=-=-=-=-=-=-=-=
 
 // Implementar rotas do servidor
@@ -35,6 +36,15 @@ app.get("/usuarios", function (request, response) {
     Usuario.findAll().then(
         function (usuarios) {
             response.render("usuario", { usuarios: usuarios })
+        }
+    );
+});
+
+app.get("/autor", function(request, response) {
+    // teste
+    Autor.findAll().then(
+        function (autores) {
+            response.render("autor", { autores: autores })
         }
     );
 });
@@ -53,6 +63,25 @@ app.get("/livro", function(request, response) {
 
 app.get("/autor", function (request, response) {
     response.render("autor");
+});
+
+app.get("/editAutor/:id", function (requisicao, resposta) {
+    Post.findOne(
+        {
+            where: {
+                id: requisicao.params.id,
+            }
+        }).then((post) => {
+            resposta.render("formulario",
+                {
+                    creating: false,
+                    id: post.id,
+                    nome: post.nome,
+                    origem: post.origem,
+                    dataNascimento:post.dataNascimento
+                }
+            );
+        });
 });
 
 app.get("/gridLivros", function (request, response) {
