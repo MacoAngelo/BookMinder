@@ -65,13 +65,13 @@ app.get("/gridLivros", function (request, response) {
 });
 
     app.post('/add', function (request, response) {
-        console.log(request.body)
         Livro.create(
         {
             titulo: request.body.titulo,
             editora: request.body.editora,
             categoria: request.body.categoria,
             autor: request.body.autor,
+            qtdAutores: request.body.qtdAutores,
             dataLancamento: request.body.dataLancamento,
             paginas: request.body.paginas,
             classificacao: request.body.classificacao,
@@ -83,25 +83,25 @@ app.get("/gridLivros", function (request, response) {
         ).catch(
              function(erro) {
                 response.send('Falha ao cadastrar novo livro. Erro ' + erro);
-             }
-        )
-    });
-
-app.get("/home", function (request, response) {
-    response.render("home");
-});
-// =-=-=-=-=-=-=-=-=-=-=-=
-
-// Configurar o Body-Parser
-app.use(bodyparser.urlencoded({ extended: false }))
-app.use(bodyparser.json());
-// =-=-=-=-=-=-=-=-=-=-=-=
-
-// Configurar o Handlebars
-app.engine('handlebars', handlebars.engine({ defaultLayout: 'main' }));
-app.set('view engine', 'handlebars');
-// =-=-=-=-=-=-=-=-=-=-=-=
-
+            }
+            )
+        });
+        
+        app.get("/home", function (request, response) {
+            response.render("home");
+        });
+        // =-=-=-=-=-=-=-=-=-=-=-=
+        
+        // Configurar o Body-Parser
+        app.use(bodyparser.urlencoded({ extended: false }))
+        app.use(bodyparser.json());
+        // =-=-=-=-=-=-=-=-=-=-=-=
+        
+        // Configurar o Handlebars
+        app.engine('handlebars', handlebars.engine({ defaultLayout: 'main' }));
+        app.set('view engine', 'handlebars');
+        // =-=-=-=-=-=-=-=-=-=-=-=
+        
 // Inicializar o servidor
 app.listen(8088, function () {
     console.log("Servidor rodando na porta 8088!");
