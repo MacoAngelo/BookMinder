@@ -89,42 +89,62 @@ app.get("/gridLivros", function (request, response) {
         ).catch(
              function(erro) {
                 response.send('Falha ao cadastrar novo livro. Erro ' + erro);
-<<<<<<< HEAD
             }
             )
         });
+
+        app.get('/info/:id', function(request, response) {
+            Livro.findAll(
+                {
+                    where: {
+                        id: request.params.id,
+                    }
+                }).then((livros) =>{
+                    response.send('livros', 
+                    {
+                        id: livros.id,
+                        editora: livros.editora,
+                        categoria: livros.categoria,
+                        autor: livros.autor,
+                        qtdAutores: livros.qtdAutores,
+                        dataLancamento: livros.dataLancamento,
+                        paginas: livros.paginas,
+                        classificacao: livros.classificacao,
+
+                    }
+                    )
+                } )
+        });
+
+        app.get("/deletar/:id", function (request, response) {
+            Livro.destroy(
+                {
+                    where: {
+                        'id': request.params.id,
+                    }
+                }
+            ).then(
+                function () {
+                    response.redirect("/gridlivros")
+                }
+            ).catch(
+                function (erro) {
+                    resposta.send("Falha ao excluir a postagem. Erro: " + erro);
+                }
+            );
+        })
         
         app.get("/home", function (request, response) {
             response.render("home");
         });
         // =-=-=-=-=-=-=-=-=-=-=-=
-        
-        // Configurar o Body-Parser
-        app.use(bodyparser.urlencoded({ extended: false }))
-        app.use(bodyparser.json());
-        // =-=-=-=-=-=-=-=-=-=-=-=
+
         
         // Configurar o Handlebars
         app.engine('handlebars', handlebars.engine({ defaultLayout: 'main' }));
         app.set('view engine', 'handlebars');
         // =-=-=-=-=-=-=-=-=-=-=-=
         
-=======
-             }
-        )
-    });
-
-app.get("/home", function (request, response) {
-    response.render("home");
-});
-// =-=-=-=-=-=-=-=-=-=-=-=
-
-// Configurar o Handlebars
-app.engine('handlebars', handlebars.engine({ defaultLayout: 'main' }));
-app.set('view engine', 'handlebars');
-// =-=-=-=-=-=-=-=-=-=-=-=
-
->>>>>>> 8cefca67c8da38717dec6d39115de91255afa9f3
 // Inicializar o servidor
 app.listen(8088, function () {
     console.log("Servidor rodando na porta 8088!");
