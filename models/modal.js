@@ -1,7 +1,7 @@
 let addButton = document.getElementById("add-use-button");
 let closeButton = document.querySelector("#add-close-modal .close-button");
 let modal = document.getElementById("add-close-modal");
-//let form = document.getElementById("add-livro-form");
+let form = document.getElementById("add-livro-form");
 
 // Adicione um evento de clique no botão para abrir o modal
 addButton.addEventListener("click", () => {
@@ -16,5 +16,7 @@ closeButton.addEventListener("click", () => {
 
    // Fechar o modal
   modal.style.display = "none";
+
+
 
 
