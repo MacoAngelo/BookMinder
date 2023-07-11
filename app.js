@@ -70,6 +70,7 @@ app.get("/gridLivros", function (request, response) {
         )
 });
 
+    // Adicionando na grid
     app.post('/add', function (request, response) {
         Livro.create(
         {
@@ -93,6 +94,7 @@ app.get("/gridLivros", function (request, response) {
             )
         });
 
+        // Informações a mais na grid
         app.get('/info/:id', function(request, response) {
             Livro.findAll(
                 {
@@ -100,7 +102,7 @@ app.get("/gridLivros", function (request, response) {
                         id: request.params.id,
                     }
                 }).then((livros) =>{
-                    response.send('livros', 
+                    response.send(
                     {
                         id: livros.id,
                         editora: livros.editora,
@@ -112,10 +114,11 @@ app.get("/gridLivros", function (request, response) {
                         classificacao: livros.classificacao,
 
                     }
-                    )
+                    );
                 } )
         });
-
+        
+        // Deletar da grid
         app.get("/deletar/:id", function (request, response) {
             Livro.destroy(
                 {
