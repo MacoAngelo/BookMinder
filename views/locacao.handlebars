@@ -1,4 +1,3 @@
-        
 <!-- Locações: funcões
 -Cadastrar/realizar novas locações de livros modal
 -Criar uma telinha separada para exibir ao usuário o seu próprio histórico de locações grid
@@ -40,6 +39,25 @@ vai funcionar conforme a quantidade de livros. Multiplicar a quantidade que for 
 
 <br>
 
+<script src="js/Grid.js"></script>
+<script>
+    var livrosEscolhidos = [
+    {id: 1,
+    titulo: "Harry Potter",
+    categoria: "Tristeza"}
+    ;
+
+    function addLivro() {
+        livrosEscolhidos.push({
+            id: 34,
+            titulo: "Teste1",
+            categoria: "Teste"
+        })
+
+        updateTable();
+    }
+</script>
+
 <form class="needs-validation" style="align-items: center;">
     <div class="form-row">
         <div class="col-md-4 mb-3" style="">
@@ -66,7 +84,7 @@ vai funcionar conforme a quantidade de livros. Multiplicar a quantidade que for 
                         Preenchido
                     </div>
                 </div>
-                
+
 
                 <div class="col-md-4 mb-3" style="float: right;">
                     <label for="validationTooltipUsername">Totalizador</label>
@@ -93,36 +111,36 @@ vai funcionar conforme a quantidade de livros. Multiplicar a quantidade que for 
         </div>
     </div>
 
-
-
     <a id="add-use-button" type="button" class="btn btn-success  mr-2">Adicionar livro</a>
-    <button class="btn btn-primary" type="submit" >Ver histórico de locação</button>
+    
 
+    <table id="livro-table">
+        
+        <thead>
+            
+            <tr>
+                
+                <th scope="col">ID</th>
+                <th scope="col">Título</th>
+                <th scope="col">Categoria   </th>
+            </tr>
+        </thead>
+        <tbody>
 
-  <div id="add-close-modal" class="modal"
-
- class="modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Livros disponíveis</h5>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Texto do corpo do modal, é aqui</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary close-button" data-dismiss="modal" >Fechar </button>
-                <button type="button" class="btn btn-primary">Pronto</button>
-            </div>
-        </div>
-    </div>
-</div>
+        </tbody>
    
 
-    
+    <div id="add-close-modal" class="modal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Livros disponíveis</h5>
+                      </div>
+                <div class="modal-footer">
 
+                    <button type="button" class="btn btn-secondary close-button" data-dismiss="modal">Fechar </button>
+                    
+                    <button type="submit" onclick="addLivro()" class="add-button btn btn-primary ">Pronto</button>
 
-
-    <script src="/models/modal.js"></script>
-    
+                    </form>
+                </div>
